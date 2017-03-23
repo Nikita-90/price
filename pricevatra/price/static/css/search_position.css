@@ -16,3 +16,7 @@ td.name {
 td.cost {
     width: 20%;
 }
+
+td.price {
+    width: 35%;
+}
