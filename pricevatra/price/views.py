@@ -23,8 +23,8 @@ def load_price(request):
 
 def search_position(request):
     price = []
-    if request.method == 'POST':
-        search_ = request.POST['search']
+    if len(request.GET) > 0:
+        search_ = request.GET['search']
         search = search_.lower().strip()
         search = option_minus(search)
         for pos in search:
@@ -89,3 +89,16 @@ def search_option(i, search, sign):
     search.insert(i, sign)
     s = ''.join(search)
     return s
+
+
+def optin_exn(search):
+    search_list = []
+    search = list(search)
+    exn = [('в', 'b'), ('у', 'y'), ('е', 'e'), ('х', 'x'), ('п', 'n')]
+    exn_ru = ['в', 'у', 'е', 'х', 'п']
+    exn_en = ['b', 'y', 'e', 'x', 'n']
+    for i in range(len(search)):
+        if search[i] in exn_en:
+            search_ = search[:]
+            exn_en[exn_en.index(search[i])] = 'x'
+            pass
