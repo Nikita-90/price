@@ -9,10 +9,10 @@ td {
     border: 1px solid black;
 }
 
-th.name {
+td.name {
     width: 45%;
 }
 
-th.cost {
+td.cost {
     width: 20%;
 }
